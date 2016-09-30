@@ -2,6 +2,16 @@ Left Array Rotation Hacker Rank Solution.
 
 A left rotation operation on an array of size  shifts each of the array's elements  unit to the left.
 For example, if  left rotations are performed on array , then the array would become .
+
+ Print a single line of n space-separated integers denoting the final state of the array after performing left rotations.
+
+Sample Input
+
+5 4              //size of array  //no. of shift/rotations 
+1 2 3 4 5       //original array
+Sample Output
+
+5 1 2 3 4       // final array
 *******************************************************************************************************************
 import java.io.*;
 import java.util.*;
