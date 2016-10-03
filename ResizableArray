@@ -31,7 +31,8 @@ public class ResizableArray {
 		if(size==items.length){
 			int[] copy=new int[size*2];
 			System.arraycopy(items, 0, copy, 0, size);
-			
+			System.out.println("Capacity Increased");
+			items=copy;
 		}
 	}
 	
@@ -59,6 +60,8 @@ public class ResizableArray {
 		rArray.append(6);
 		rArray.append(7);
 		rArray.append(8);
+		
+		rArray.append(45);
 		
 		rArray.set(0, 8);
 		
