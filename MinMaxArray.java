@@ -45,6 +45,7 @@ public class Solution {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int[] arr = new int[5];
+        // Using Long to avoid integer overflow
         List<Long> l=new ArrayList<Long>();
         int count=1;
         long sum=0;
