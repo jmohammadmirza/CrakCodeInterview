@@ -7,6 +7,7 @@ import java.util.List;
 
 /*
 Reverse First N elements in the array Solution
+@author Mohammad Javed 
  */
 public class Nagarro {
 
@@ -23,19 +24,26 @@ public class Nagarro {
 
 		}
 		 */
-		// Using List little complicated
+        	// Using List little complicated
+
+		System.out.println("Original Array Print "+Arrays.toString(a));
 
 		List<Integer> al=new ArrayList<Integer>();
 
-		for(int i:a){
-			al.add(i);
+		for(int i=0;i<n;i++){
+			al.add(a[i]);
 		}
-
-		Collections.reverse(al);
 		//Print List
 		System.out.println("List Print "+al);
 
+		Collections.reverse(al);
+
+		for(int k=n;k<a.length;k++){
+			al.add(a[k]);
+		}
+
 		int[] array = al.stream().mapToInt(i->i).toArray();
+
 
 		//Print Array
 		System.out.println("Array Print"+Arrays.toString(array));
