@@ -53,6 +53,12 @@ public class SortDate {
 		Arrays.sort(dateArray);
 
 		System.out.println("Arrays Date: "+Arrays.toString(dateArray));
+		
+		//Print in the specific format
+		for ( LocalDate localDate : list ) {
+		   System.out.println( localDate.format(formatter));
+		}
+		
 	}
 
 }
