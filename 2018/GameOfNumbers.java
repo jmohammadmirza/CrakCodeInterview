@@ -1,5 +1,19 @@
 /*
 See GameOfNumbers.PNG for questions
+Input and Output
+10
+1
+6
+2
+10
+2
+3
+2
+10
+6
+4
+
+2 2 2 -1 2 6 6 -1 -1 -1 
 */
 package com.something.anything;
 
