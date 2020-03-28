@@ -29,6 +29,7 @@ public class ResizableArray {
 	}
 	private void  ensureExtraCapacity(){
 		if(size==items.length){
+		System.out.println("current size "+size);
 			int[] copy=new int[size*2];
 			System.arraycopy(items, 0, copy, 0, size);
 			System.out.println("Capacity Increased");
