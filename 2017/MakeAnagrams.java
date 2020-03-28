@@ -31,7 +31,7 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-public class Solution {
+public class MakeAnagrams {
     public static int numberNeeded(String first, String second) {
         
         int[] count=new int[26];
