@@ -79,6 +79,8 @@ import java.util.*;
 			itr = nonPrimeArray.iterator();
 			while(itr.hasNext())
 				System.out.print(itr.next()+" ");
+			/**  new Line *
+			**/
 			System.out.println();
 		}
 		
