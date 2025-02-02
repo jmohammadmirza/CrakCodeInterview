@@ -107,6 +107,76 @@ public class Solution {
     }
 }
 /***
+
+*****************************************************
+
+
+Let me break down the circular buffer approach step by step:
+
+First, let's look at creating the result list:
+
+javaCopyList<Integer> result = new ArrayList<>(Collections.nCopies(n, 0));
+
+Creates a new ArrayList of size n
+Initializes all elements to 0
+Collections.nCopies(n, 0) creates n copies of 0
+This pre-sizes our list so we can use set() instead of add()
+
+
+The rotation formula:
+
+javaCopyint newPosition = (i - d + n) % n;
+Let's see how this works with an example:
+CopyInput list: [1, 2, 3, 4, 5]
+n = 5 (length)
+d = 2 (left rotation)
+
+For each index i:
+i = 0: newPosition = (0 - 2 + 5) % 5 = 3
+      1 moves from index 0 to index 3
+i = 1: newPosition = (1 - 2 + 5) % 5 = 4
+      2 moves from index 1 to index 4
+i = 2: newPosition = (2 - 2 + 5) % 5 = 0
+      3 moves from index 2 to index 0
+i = 3: newPosition = (3 - 2 + 5) % 5 = 1
+      4 moves from index 3 to index 1
+i = 4: newPosition = (4 - 2 + 5) % 5 = 2
+      5 moves from index 4 to index 2
+Original:  [1, 2, 3, 4, 5]
+Result:    [3, 4, 5, 1, 2]
+
+The placement:
+
+javaCopyresult.set(newPosition, a.get(i));
+
+Gets element from original position i
+Places it in its new calculated position
+
+Let's see the complete transformation step by step:
+CopyStarting:     [0, 0, 0, 0, 0]
+i=0: 1 → 3:  [0, 0, 0, 1, 0]
+i=1: 2 → 4:  [0, 0, 0, 1, 2]
+i=2: 3 → 0:  [3, 0, 0, 1, 2]
+i=3: 4 → 1:  [3, 4, 0, 1, 2]
+i=4: 5 → 2:  [3, 4, 5, 1, 2]
+Why add n in the formula (i - d + n)?
+
+Without +n, negative numbers could occur
+Example: when i=0, d=2: (0-2) = -2
+Adding n ensures positive numbers: (0-2+5) = 3
+The modulo operator then keeps it in range
+
+This approach is efficient because:
+
+Single pass through the array
+Each element is moved exactly once
+No extra temporary storage needed beyond the result list
+Works for any rotation amount
+O(n) time complexity
+No need for multiple swaps or reversals
+
+*******************************************************
+
   Compiler Message
   Success
   Input (stdin)
