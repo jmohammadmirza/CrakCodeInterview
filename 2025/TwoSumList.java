@@ -46,7 +46,16 @@ public class TwoSumList {
                 .findFirst()
                 .orElse(Collections.emptyList());
     }
-    
+     // Method 3: Using Java 8 Stream API returns all combination of indices
+    public static List<List<Integer>> findTwoSumStreamAllIndices(List<Integer> nums, int target) {
+        return IntStream.range(0, nums.size())
+                .boxed()
+                .flatMap(i -> IntStream.range(i + 1, nums.size())
+                        .filter(j -> nums.get(i) + nums.get(j) == target)
+                        .mapToObj(j -> Arrays.asList(i, j)))
+                        .collect(Collectors.toList());
+                .orElse(Collections.emptyList());
+    }
     public static void main(String[] args) {
         List<Integer> nums = Arrays.asList(3, 2, 4, 1);
         int target = 5;
