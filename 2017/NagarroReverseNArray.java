@@ -28,9 +28,13 @@ public class Nagarro {
 
 		System.out.println("Original Array Print "+Arrays.toString(a));
 
-		List<Integer> al=new ArrayList<Integer>();
+		List<Integer> al  =Arrays.stream(a).boxed().collect(Collectors.toList());	
+		
+		List<Integer> subListAl=al.subList(0, n+1);
+		
+		Collections.reverse(subListAl);
 
-		for(int i=0;i<n;i++){
+		/** for(int i=0;i<n;i++){
 			al.add(a[i]);
 		}
 		//Print List
@@ -40,9 +44,9 @@ public class Nagarro {
 
 		for(int k=n;k<a.length;k++){
 			al.add(a[k]);
-		}
+		} **/
 
-		int[] array = al.stream().mapToInt(i->i).toArray();
+		int[] array = subListAl.stream().mapToInt(i->i).toArray();
 
 
 		//Print Array
