@@ -39,7 +39,17 @@ A3.
   SELECT COUNT(CustomerID),Country FROM Customers GROUP BY Country ORDER BY COUNT(CustomerID) DESC;
 
 _______________________________________________________________________________________________________________________________________
+Q4. Average Population of Each Continent
 
+select
+    co.continent, trunc(avg(ci.population))
+from
+    city ci
+    join country co on (co.code = ci.countrycode)
+group by
+    co.continent
+;
+________________________________________________________________________________________________________________________________
 
 
 
