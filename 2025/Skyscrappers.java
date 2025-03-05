@@ -55,7 +55,8 @@ public class Skyscrappers {
         
     public static int[] findMaxConsecutiveSum(int[] array) {
         if (array == null || array.length < 2) {
-            return null; // Or throw an exception, depending on your requirements
+           return new int[]{1,1};
+         // Largest Square will be one.
         }
 
         int maxSum = array[0] + array[1];
